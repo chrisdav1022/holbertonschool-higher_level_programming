@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""comment in python"""
+
+
 class Square:
-    """square"""
+    """class square"""
 
     def __init__(self, size):
         """Initializes the data"""
