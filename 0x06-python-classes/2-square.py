@@ -2,18 +2,14 @@
 """coment in python"""
 
 
-Square = __import__('1-square').Square
+class Square:
+    """Represents a square"""
 
-my_square = Square(3)
-print(type(my_square))
-print(my_square.__dict__)
+    def __init__(self, size=0):
+        """data"""
 
-try:
-    print(my_square.size)
-except Exception as e:
-    print(e)
-
-try:
-    print(my_square.__size)
-except Exception as e:
-    print(e)
+        if type(size) != int:
+            raise TypeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = size
