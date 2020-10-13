@@ -19,3 +19,12 @@ class Rectangle(Base):
             return ('[Rectangle] (' + str(self.id) + ') ' + str(self.__x) + '/' +
                     str(self.__y) + ' - ' + str(self.__width) + '/' +
                     str(self.__height))
+
+        def integer_validator(self, name, value):
+        """Validate value."""
+        if type(value) != int:
+            raise TypeError('{} must be an integer'.format(name))
+        if value <= 0 and (name == 'width' or name == 'height'):
+            raise ValueError('{} must be > 0'.format(name))
+        if value < 0 and (name == 'x' or name == 'y'):
+            raise ValueError('{} must be >= 0'.format(name))    
