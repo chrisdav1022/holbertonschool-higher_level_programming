@@ -3,4 +3,5 @@
 
 
 class LockedClass:
+    """slots tell Python not to use a dict"""
     __slots__ = ['first_name']
