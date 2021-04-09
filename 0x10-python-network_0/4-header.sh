@@ -1,3 +1,3 @@
 #!/bin/bash
 #script that takes in a URL as an argument
-curl -s -H "$1" "X-HolbertonSchool-User-Id: 98"
+curl -s -H "X-HolbertonSchool-User-Id: 98" "$1"
