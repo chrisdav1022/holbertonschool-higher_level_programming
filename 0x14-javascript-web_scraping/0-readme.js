@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /*
-- The content of the file must be read in utf-8
+-The content of the file must be read in utf-8
 -If an error occurred during the reading, print the error object
 */
 
