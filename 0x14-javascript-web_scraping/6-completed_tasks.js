@@ -4,17 +4,13 @@
 -Only print users with completed task
 */
 const request = require('request');
-request(process.argv[2], function (error, response, body) {
-  if (!error) {
-    const results = JSON.parse(body);
-    const objeto = {};
-    for (let i = 0; i < results.length; i++) {
-      if (objeto[results[i].userId] === undefined) {
-        objeto[results[i].userId] = 1;
-      } else if (results[i].completed === true) {
-        objeto[results[i].userId] += 1;
-      }
+request(process.argv[2], (error, response, body) => {
+  if (error) throw error;
+  else {
+    const d = {};
+    for (const t of JSON.parse(body)) {
+      if (t.completed) d[t.userId] ? d[t.userId]++ : d[t.userId] = 1;
     }
-    console.log(objeto);
+    console.log(d);
   }
 });
